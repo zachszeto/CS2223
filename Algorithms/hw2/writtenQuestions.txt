@@ -1,0 +1,20 @@
+Question 1.1
+	Base Case:
+		S(1) = 3
+	
+	Recursive Case:
+		S(n) = 2*S(n/2) + n/2 + 2
+
+Question 1.2
+	S(n) = 2*S(n/2) + n/2 + 2
+		 = 2 * [2*S(n/4) + n/4 + 2] + n/2 + 2
+		 = 2 * [ 2 * [2*S(n/8) + n/8 + 2] + n/4 + 2] + n/2 + 2
+		 = 2^3 * S(n/8) + n/2 + n/2 + n/2 + 8 + 4 + 2
+		 = 2^k * S(n/2^k) + 3n/2 + 14
+		 = 2^k * S(n/2^k) + kn/2 + 2(4 + 2 + 1)
+		 = n * S(n/n) + nlog(n)/2 + 2(n - 1)
+		 = n * S(1) + nlog(n)/2 + 2n - 2
+		 = 3n + nlog(n)/2 + 2n - 2
+		 = 5n - 2 + nlog(n)
+		 
+	Notes: k = logbase2(n) and S(1) = 3
